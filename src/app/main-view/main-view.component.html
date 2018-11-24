@@ -1,0 +1,10 @@
+<div class="main-view">
+  <app-items @animateChild></app-items>
+  <button class="add-button" (click)="openAddItem()"><i class="fas fa-plus"></i></button>
+  <!--Add Item Dialog-->
+  <app-add-item 
+    *ngIf="showAddItem"
+    @animateChild 
+    (closed)="closeAddItem()"
+    ></app-add-item>
+</div>

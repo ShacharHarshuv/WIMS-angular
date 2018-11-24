@@ -1,0 +1,93 @@
+.modal-container{
+    //The dark background
+    background-color: rgba(0, 0, 0, 0.5);
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    align-items: flex-end;
+}
+.modal-box-bottom{
+    //The modal box itself
+    background-color: white;
+    padding: 20px;
+    width: 100%;
+
+    h2{
+        margin: 10px 0;
+    }
+}
+
+//The item input row part
+.item-input-row{
+    display: flex;
+    align-items: center;
+
+    input{
+        flex-grow: 1;
+        margin: 10px;
+    }
+    //hide the default file input
+    .img-input{
+        height: 0.1px;
+        width: 0.1px;
+        opacity: 0;
+        overflow: hidden;
+        position: absolute;
+        z-index: -1;
+    }
+
+    //the image input
+    .img-input + label{
+        cursor: pointer;
+        height: 55px;
+        width: 55px;
+
+        //The add image button (if no image is loaded)
+        .add-image{
+            background-color: rgb(149, 149, 149);
+            color: rgb(78, 78, 78);
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            font-size: 23px;
+        }
+        
+        //The actual image, if image is loaded
+        img{
+            height: 50px;
+            width: 50px;
+        }
+
+    }
+
+    .name-input-container{
+        padding: 10px;
+        display: flex;
+        align-items: center
+    }
+    .name-input{
+        font-size: 18px;
+        border: none;
+        border-bottom: 1px solid blue;
+        -webkit-tap-highlight-color: transparent;
+    }
+    .name-input:focus{
+        border-bottom-width: 3px;
+    }
+}
+
+// The bottom row
+.align-right{
+    display: flex;
+    flex-direction: row-reverse;
+}
+
+.error {
+    color: red;
+    display: block;
+}

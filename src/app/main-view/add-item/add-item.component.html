@@ -1,0 +1,27 @@
+<div [@opacityIn] 
+  class="modal-container" 
+  (click)="close()">
+  <div [@swipeInOut] 
+    class="modal-box-bottom" 
+    (click)="$event.stopPropagation()">
+      <h2>Add Item</h2>
+      <p *ngIf="error" class="error">{{ error }}</p>
+      <form (submit)="submitAdd()" id="myForm" >
+
+        <div class="item-input-row">
+            <input type="file" class="img-input" name="img" [(ngModel)]="img" id="img" />
+            <label for="img" >
+              <div class="add-image">
+                <i class="fas fa-camera"></i>
+              </div>
+            </label>
+            <input class="name-input" type="text" placeholder="Item name..." name="name" [(ngModel)]="name">  
+        </div>
+          
+        <div class="align-right">
+          <input class="btn btn-primary" type="submit" value="save"/>
+          <input (click)="close()" class="btn" type="button" value="Cancel">
+        </div>
+      </form>
+  </div>
+</div>

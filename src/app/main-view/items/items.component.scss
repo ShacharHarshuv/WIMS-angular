@@ -1,0 +1,61 @@
+ul.items{
+    padding: 0;
+    margin: 0;
+    li.item{
+        display: grid;
+        grid-template-columns: 50px auto;
+        position: relative;
+        border: 1px solid rgb(221, 221, 221);
+        border-width: 1px 0 0 0 ;
+        background-color: white;
+
+        img{
+            height: 40px;
+            width: 40px;
+            margin: 6px;
+            border-radius: 50%;
+        }
+        .item-content{
+            height: 100%;
+            margin: 0 10px;
+
+            .item-name{
+                line-height: 50px;
+                font-weight: 450;
+            }
+        }
+        .menu{
+            position: absolute;
+            top: 13px;
+            right: 5px;
+            // transform: translateY(-50%);
+            color: black;
+
+            .menu-content{
+                position: absolute;
+                right: 10px;
+                z-index: 1;
+                background-color: white;
+                width: 160px;
+                box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+                box-sizing: border-box;
+                overflow: hidden;
+
+                //collpased:
+                max-height: 0;
+                max-width: 0;
+                transition: 300ms ease;
+                
+                //The list itself (options menu)
+                ul{
+                    margin: 10px 15px;
+                }
+            }
+        }
+        .menu.open .menu-content{
+            max-height: 50px;
+            max-width: 200px;
+            transition: 300ms ease;
+        }
+    }
+}

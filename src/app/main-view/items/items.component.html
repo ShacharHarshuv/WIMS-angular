@@ -1,0 +1,20 @@
+<ul class="items">
+  <li
+    class="item"
+    @itemAnim
+    *ngFor="let i of itemsService.items" 
+    id={{i.id}} >
+    <img src="{{i.img}}" alt="">
+    <div class="item-content">
+        <span class="item-name">{{i.name}}</span>
+        <button class="btn-icon menu" dropdown>
+          <i class="fas fa-ellipsis-v"></i>
+          <div class="menu-content">
+            <ul>
+              <li (click)="delete($event)">Delete</li>
+            </ul>
+          </div>
+        </button>
+    </div>
+  </li>
+</ul>
